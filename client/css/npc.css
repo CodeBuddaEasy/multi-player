@@ -1,0 +1,302 @@
+
+
+#mode-toggle {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.mode-btn {
+    padding: 10px 28px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: #6d6d6d;
+    background-image: url('/assets/menu/concrete.jpg');
+    background-blend-mode: overlay;
+    border: 2px solid #aaa;
+    color: #fff;
+    border-radius: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mode-btn:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+.mode-btn.mode-active {
+    background: #4466aa;
+    background-image: url('/assets/menu/concrete.jpg');
+    background-blend-mode: overlay;
+    border-color: #4488ff;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(68, 136, 255, 0.5);
+}
+
+
+
+
+#npc-config-panel {
+    display: none;
+    margin-top: 20px;
+    padding: 20px 24px;
+    background: #6d6d6d;
+    border: 5px solid #ffffff;
+    border-radius: 1px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#add-bot-btn {
+    display: inline-block;
+    padding: 8px 22px;
+    font-size: 0.82rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(68, 136, 255, 0.15);
+    border: 2px solid #4488ff;
+    color: #4488ff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 18px;
+    transition: background 0.2s;
+}
+
+#add-bot-btn:hover {
+    background: rgba(68, 136, 255, 0.3);
+}
+
+#npc-slots-container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+
+.npc-slot-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 18px 18px;
+    background: #6d6d6d;
+    background-image: url('/assets/menu/concrete.jpg');
+    background-blend-mode: overlay;
+    border: 4px solid #444;
+    border-radius: 1px;
+    width: 230px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.npc-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.npc-slot-label {
+    font-family: 'MyFont', monospace;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+.npc-remove-btn {
+    width: 22px;
+    height: 22px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 0.7rem;
+    background: rgba(255, 68, 68, 0.15);
+    border: 1px solid #ff4444;
+    color: #ff4444;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+
+.npc-remove-btn:hover {
+    background: rgba(255, 68, 68, 0.35);
+}
+
+
+
+
+.npc-preset-row {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.preset-btn {
+    flex: 1;
+    padding: 6px 0;
+    font-family: 'MyFont', monospace;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.25);
+    border: 2px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+
+.preset-btn[data-preset="easy"] {
+    border-color: rgba(68, 204, 68, 0.45);
+    color: rgba(68, 204, 68, 0.7);
+}
+
+.preset-btn[data-preset="medium"] {
+    border-color: rgba(255, 170, 0, 0.45);
+    color: rgba(255, 170, 0, 0.7);
+}
+
+.preset-btn[data-preset="hard"] {
+    border-color: rgba(255, 68, 68, 0.45);
+    color: rgba(255, 68, 68, 0.7);
+}
+
+
+.preset-btn[data-preset="easy"]:hover {
+    border-color: rgba(68, 204, 68, 0.75);
+    color: #44cc44;
+}
+
+.preset-btn[data-preset="medium"]:hover {
+    border-color: rgba(255, 170, 0, 0.75);
+    color: #ffaa00;
+}
+
+.preset-btn[data-preset="hard"]:hover {
+    border-color: rgba(255, 68, 68, 0.75);
+    color: #ff4444;
+}
+
+
+.preset-btn[data-preset="easy"].preset-active {
+    border-color: #44cc44;
+    color: #44cc44;
+    background: rgba(68, 204, 68, 0.15);
+    box-shadow: 0 0 8px rgba(68, 204, 68, 0.6);
+}
+
+.preset-btn[data-preset="medium"].preset-active {
+    border-color: #ffaa00;
+    color: #ffaa00;
+    background: rgba(255, 170, 0, 0.15);
+    box-shadow: 0 0 8px rgba(255, 170, 0, 0.6);
+}
+
+.preset-btn[data-preset="hard"].preset-active {
+    border-color: #ff4444;
+    color: #ff4444;
+    background: rgba(255, 68, 68, 0.15);
+    box-shadow: 0 0 8px rgba(255, 68, 68, 0.6);
+}
+
+
+
+
+.npc-stat-steppers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-stepper-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.stat-stepper-label {
+    width: 54px;
+    font-family: 'MyFont', monospace;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+    text-align: left;
+}
+
+.stat-stepper-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.step-btn {
+    width: 28px;
+    height: 28px;
+    line-height: 26px;
+    text-align: center;
+    font-family: 'MyFont', monospace;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid #aaa;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    transition: background 0.15s;
+    user-select: none;
+}
+
+.step-btn:hover {
+    background: rgba(0, 0, 0, 0.45);
+    border-color: #fff;
+}
+
+.step-btn:active {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.stat-num {
+    width: 28px;
+    font-family: 'MyFont', monospace;
+    font-size: 20px;
+    text-align: center;
+    flex-shrink: 0;
+   
+}
+
+
+
+
+.bot-badge {
+    display: inline-block;
+    font-size: 0.58rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    padding: 1px 5px;
+    border-radius: 3px;
+    background: #ff4444;
+    color: #fff;
+    vertical-align: middle;
+    margin-left: 5px;
+    line-height: 1.4;
+}
+
+
+.slot-title .bot-badge {
+    font-size: 0.65rem;
+}

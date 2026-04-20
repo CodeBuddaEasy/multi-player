@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reaction Arena</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="bg-orbs"></div>
+
+    <section id="screen-menu" class="screen active">
+      <div class="card menu-card">
+        <h1>Reaction Arena</h1>
+        <p class="subtitle">Rainy-night reflex battles for 2-4 players.</p>
+        <input id="player-name" maxlength="16" placeholder="Your name" />
+        <input id="room-code" maxlength="6" placeholder="Room code to join" />
+        <div class="row">
+          <button id="create-match">Create Match</button>
+          <button id="join-match">Join Match</button>
+        </div>
+        <div class="row">
+          <button id="single-player">Single Player</button>
+          <button id="how-to">How To Play</button>
+          <button id="settings-btn">Settings</button>
+        </div>
+        <p id="menu-error" class="error"></p>
+      </div>
+    </section>
+
+    <section id="screen-lobby" class="screen">
+      <div class="card">
+        <h2>Lobby <span id="lobby-room-id">------</span></h2>
+        <p id="invite-url"></p>
+        <div class="row">
+          <select id="hat-color"><option>red</option><option>white</option><option>black</option></select>
+          <select id="footwear"><option>boots</option><option>sneakers</option><option>slippers</option></select>
+          <select id="badge"><option>lightning</option><option>coffee</option><option>bug</option><option>none</option></select>
+          <select id="coding-affinity"><option>casual</option><option>dedicated</option><option>unhealthy</option></select>
+        </div>
+        <div class="row">
+          <button id="apply-cosmetics">Apply Avatar Style</button>
+          <button id="ready-toggle">Ready</button>
+          <button id="start-match">Start Match</button>
+          <button id="leave-room">Leave</button>
+        </div>
+        <div class="row">
+          <label>Bot count <input id="bot-count" type="number" min="1" max="3" value="2" /></label>
+          <select id="bot-difficulty"><option>easy</option><option selected>normal</option><option>hard</option></select>
+          <button id="apply-bots">Configure Bots</button>
+        </div>
+        <div id="lobby-players" class="players-grid"></div>
+      </div>
+    </section>
+
+    <section id="screen-arena" class="screen">
+      <header class="hud">
+        <div id="status-banner">Waiting...</div>
+        <div id="timer">01:30</div>
+        <div>
+          <button id="pause-btn">Pause</button>
+          <button id="quit-btn">Quit</button>
+        </div>
+      </header>
+      <main id="arena-root">
+        <div id="signal-board">GET READY</div>
+        <div id="seat-top" class="seat"></div>
+        <div id="seat-right" class="seat"></div>
+        <div id="seat-bottom" class="seat"></div>
+        <div id="seat-left" class="seat"></div>
+      </main>
+      <aside id="message-feed"></aside>
+    </section>
+
+    <section id="screen-end" class="screen">
+      <div class="card">
+        <h2 id="winner-title">Winner</h2>
+        <ol id="final-ranking"></ol>
+        <div class="row">
+          <button id="rematch-btn">Replay</button>
+          <button id="menu-btn">Return Menu</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="overlay-how" class="overlay">
+      <div class="card">
+        <h3>How to Play</h3>
+        <p>Watch the center board, then press matching Arrow key or WASD after signal appears.</p>
+        <p>Fastest correct: +2. Other correct: +1. Wrong: -1. False start: -2 and lockout.</p>
+        <button class="close-overlay">Close</button>
+      </div>
+    </section>
+
+    <section id="overlay-settings" class="overlay">
+      <div class="card">
+        <h3>Settings</h3>
+        <label><input id="toggle-music" type="checkbox" checked /> Music enabled</label>
+        <label><input id="toggle-sfx" type="checkbox" checked /> SFX enabled</label>
+        <label>Volume <input id="master-volume" type="range" min="0" max="1" step="0.05" value="0.4" /></label>
+        <button class="close-overlay">Close</button>
+      </div>
+    </section>
+
+    <section id="overlay-pause" class="overlay">
+      <div class="card">
+        <h3>Paused</h3>
+        <p id="pause-by"></p>
+        <button id="resume-btn">Resume</button>
+      </div>
+    </section>
+
+    <section id="debug-overlay" class="overlay-debug"></section>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/debugOverlay.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
