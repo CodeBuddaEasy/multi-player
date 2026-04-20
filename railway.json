@@ -1,0 +1,1 @@
+{"build": {"env": {"NODE_ENV": "production","PORT": "3000"}},"deploy": {"env": {"DATABASE_URL": "<your_database_url>","API_KEY": "<your_api_key>"}}}
